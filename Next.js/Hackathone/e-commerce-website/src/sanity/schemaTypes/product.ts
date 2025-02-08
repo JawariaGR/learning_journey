@@ -35,9 +35,9 @@ export const productInfo = {
       title: "Discounts",
     },
     {
-        name: "newarrivel",
-        type: "string",
-        title: "New",
-      },
+      name: "newarrival",
+      type: "string",
+      title: "New Arrival",
+    },
   ],
 };

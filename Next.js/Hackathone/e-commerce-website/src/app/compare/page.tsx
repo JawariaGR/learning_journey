@@ -1,46 +1,14 @@
-import Navbar from "@/components/Navbar";
+import HeadBanner from "@/components/Head";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, ChevronDown } from "lucide-react";
+import {ChevronDown } from "lucide-react";
 import Star from "@mui/icons-material/Star";
 import StarHalf from "@mui/icons-material/StarHalf";
 import Topfooter from "@/components/TopFooter";
-import Footer from "@/components/Footer";
 export default function compare() {
   return (
     <div>
-      <Navbar />
-      {/*comparebanner*/}
-      <section>
-        <div className="relative">
-          <Image
-            src={"/Rectangle 1.png"}
-            alt="shopbg"
-            height={316}
-            width={14440}
-            className="bg-cover"
-          />
-          <div className="absolute lg:top-[120px] top-9 left-32 lg:left-[500px]">
-            <Image
-              src={"/Meubel House_Logos-05.png"}
-              alt="logo"
-              width={70}
-              height={70}
-              className="pb-4 ml-9 hidden"
-            />
-            <h1 className="font-bold pl-7 text-xl lg:pl-0 lg:text-5xl">
-              Product Comparison{" "}
-            </h1>
-            <div className="flex lg:mt-5 lg:text-xl ml-11 lg:ml-28">
-              <Link href={"/"} className="font-bold">
-                Home
-              </Link>
-              <ChevronRight />
-              <p className="font-thin">Comparion</p>
-            </div>
-          </div>
-        </div>
-      </section>
+    <HeadBanner title="Compare"/>
       <main>
         <div className="lg:mt-20 mt-10 border-b-2">
           <div className="lg:ml-20 ml-8 mb-20 flex flex-col lg:flex-row gap-9 lg:gap-0 justify-between items-start mr-20 ">
@@ -294,7 +262,6 @@ export default function compare() {
         </div>
       </main>
       <Topfooter />
-      <Footer />
     </div>
   );
 }

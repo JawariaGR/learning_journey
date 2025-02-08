@@ -1,15 +1,10 @@
-"use client";
-import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Product from "@/components/product";
-import Hover from "@/components/Hover";
 import { ArrowRight, ChevronRight } from "lucide-react";
-import Footer from "@/components/Footer";
 import Link from "next/link";
 export default function Home() {
   return (
     <div>
-      <Navbar />
       <main className="h-full">
         <div className="relative">
           <Image
@@ -30,9 +25,12 @@ export default function Home() {
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam
               laudantium rem enim maiores corporis dolores.
             </p>
-        <Link href={"/navshop"}>    <button className="bg-[#bc9536] h-14 w-40 rounded-sm mt-24 mr-32 text-[#FFFFFF] font-bold shadow-xl hover:bg-[#e3b64b] hover:translate-x-2 hover:translate-y-3">
-              Buy Now
-            </button></Link>
+            <Link href={"/navshop"}>
+              {" "}
+              <button className="bg-[#bc9536] h-14 w-40 rounded-sm mt-24 mr-32 text-[#FFFFFF] font-bold shadow-xl hover:bg-[#e3b64b] hover:translate-x-2 hover:translate-y-3">
+                Buy Now
+              </button>
+            </Link>
           </div>
         </div>
       </main>
@@ -89,103 +87,15 @@ export default function Home() {
         </div>
       </section>
       {/*product */}
-      <section className="h-full">
+      <section>
         <div className="flex justify-center m-8">
           <h1 className="text-4xl font-extrabold">Our Product</h1>
-        </div>
-        <Product />
-        <div className="flex justify-center items-center m-8">
-          <div className="grid lg:grid-rows-1 lg:grid-cols-4 gap-7 grid-row-1 grid-col-1">
-            <div className="relative group shadow-xl rounded-lg bg-[#f4f5f7]">
-              <Link href={"/single-product"}>
-                <Image
-                  src={"/propic5.png"}
-                  alt="propic"
-                  width={285}
-                  height={301}
-                />
-                <Hover />
-              </Link>
-              <div className="m-7">
-                <h1 className="font-bold">Grifo</h1>
-                <p className="text-gray-500 text-sm">Night lamp</p>
-                <p className="font-bold pt-2">Rp 1,500.000 </p>
-              </div>{" "}
-            </div>
-            <div className="relative group shadow-xl rounded-lg bg-[#f4f5f7]">
-              {" "}
-              <Link href={"/single-product"}>
-                {" "}
-                <Image
-                  src={"/propic6.png"}
-                  alt="propic"
-                  width={285}
-                  height={301}
-                />
-                <Hover />
-              </Link>
-              <div className="absolute bg-[#2ec1ac] text-[#fceded] font-bold h-14 w-14 top-3  flex justify-center ml-48 rounded-3xl items-center opacity-100 group-hover:opacity-0">
-                <p>New</p>
-              </div>
-              <div className="m-7">
-                <h1 className="font-bold">Muggo</h1>
-                <p className="text-gray-500 text-sm">small mug</p>
-                <p className="font-bold pt-2">Rp 150.000 </p>
-              </div>{" "}
-            </div>
-            <div className="relative group shadow-xl rounded-lg bg-[#f4f5f7]">
-              {" "}
-              <Link href={"/single-product"}>
-                {" "}
-                <Image
-                  src={"/propic7.png"}
-                  alt="propic"
-                  width={285}
-                  height={301}
-                />
-                <Hover />
-              </Link>
-              <div className="absolute bg-[#e97171] text-[#fceded] font-bold h-14 w-14 top-3  flex justify-center ml-48 rounded-3xl items-center opacity-100 group-hover:opacity-0 ">
-                <p>-50%</p>
-              </div>
-              <div className="m-7">
-                <h1 className="font-bold">Pingky</h1>
-                <p className="text-gray-500 text-sm">Cute bad set</p>
-                <p className="font-bold pt-2">
-                  Rp 7,000.000
-                  <span className="pl-2 font-light">
-                    <del>Rp 14,000.000</del>
-                  </span>
-                </p>
-              </div>{" "}
-            </div>
-            <div className="relative group shadow-xl rounded-lg bg-[#f4f5f7]">
-              {" "}
-              <Link href={"/single-product"}>
-                {" "}
-                <Image
-                  src={"/propic8.jpg"}
-                  alt="propic"
-                  width={285}
-                  height={301}
-                />
-                <Hover />
-              </Link>
-              <div className="absolute bg-[#2ec1ac] text-[#fceded] font-bold h-14 w-14 top-3  flex justify-center ml-48 rounded-3xl items-center opacity-100 group-hover:opacity-0">
-                <p>New</p>
-              </div>
-              <div className="m-7">
-                <h1 className="font-bold">Potty</h1>
-                <p className="text-gray-500 text-sm">Minimalist flower pot</p>
-                <p className="font-bold pt-2">Rp 500.000 </p>
-              </div>{" "}
-            </div>
-          </div>
-        </div>
-        <div className="flex justify-center items-center mt-14">
+        </div>{" "}
+        <Product/>
+        <div className="flex justify-center my-8">
           <Link href={"/navshop"}>
             {" "}
-            <button className="bg-white border-[#B88E2F] border-solid border-2 w-48 h-10 text-[#B88E2F] shadow-xl hover:translate-x-4 hover:translate-y-4 ">
+            <button className="bg-white border-[#B88E2F]  border-solid border-2 w-48 h-10 text-[#B88E2F] shadow-xl hover:translate-x-4 hover:translate-y-4 ">
               Show More
             </button>
           </Link>
@@ -327,7 +237,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 }

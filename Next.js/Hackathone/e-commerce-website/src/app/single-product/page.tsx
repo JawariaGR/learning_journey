@@ -1,5 +1,4 @@
-"use client";
-import Navbar from "@/components/Navbar";
+"use client"
 import { ChevronRight } from "lucide-react";
 import Star from "@mui/icons-material/Star";
 import StarHalf from "@mui/icons-material/StarHalf";
@@ -10,16 +9,13 @@ import {
   faInstagram,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import Product from "@/components/product";
-import Footer from "@/components/Footer";
 import Link from "next/link";
 import Quanity from "@/components/ui/Quanity";
+import Product from "@/components/product";
 
 export default function singleProduct() {
   return (
     <div>
-      <Navbar />
-      {/*secondnav*/}
       <section>
         <div className="flex gap-5 bg-[#F9F1E7]">
           <div className="flex m-9">
@@ -247,7 +243,6 @@ export default function singleProduct() {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 }

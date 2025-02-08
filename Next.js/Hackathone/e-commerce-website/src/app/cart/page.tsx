@@ -1,43 +1,13 @@
-import Navbar from "@/components/Navbar";
+import HeadBanner from "@/components/Head";
 import Image from "next/image";
 import Link from "next/link";
 import Delete from "@mui/icons-material/Delete";
-import { ChevronRight } from "lucide-react";
 import Topfooter from "@/components/TopFooter";
-import Footer from "@/components/Footer";
+
 export default function cart() {
   return (
     <div>
-      <Navbar />
-      {/*cartbanner*/}
-      <section>
-        <div className="relative">
-          <Image
-            src={"/Rectangle 1.png"}
-            alt="shopbg"
-            height={316}
-            width={14440}
-            className="bg-cover"
-          />
-          <div className="absolute lg:top-[120px] top-9 left-44 lg:left-[650px]">
-            <Image
-              src={"/Meubel House_Logos-05.png"}
-              alt="logo"
-              width={70}
-              height={70}
-              className="pb-4 ml-9 hidden"
-            />
-            <h1 className="font-bold pl-7 text-xl lg:pl-0 lg:text-5xl">Cart</h1>
-            <div className="flex lg:mt-5 lg:text-xl">
-              <Link href={"/"} className="font-bold">
-                Home
-              </Link>
-              <ChevronRight />
-              <p className="font-thin">Cart</p>
-            </div>
-          </div>
-        </div>
-      </section>
+<HeadBanner title="Cart"/>
       {/*MAIN*/}
       <main>
         <div className="flex flex-col lg:flex-row mt-8 ml-2 lg:m-20 justify-between items-start">
@@ -100,7 +70,6 @@ export default function cart() {
         </div>
       </main>
       <Topfooter />
-      <Footer />
     </div>
   );
 }

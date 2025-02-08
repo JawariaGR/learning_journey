@@ -1,39 +1,15 @@
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import HeadBanner from "@/components/Head";
 import Product from "@/components/product";
 import Topfooter from "@/components/TopFooter";
 import {
-  ChevronRight,
   LayoutGridIcon,
   AlignVerticalJustifyCenterIcon,
   SlidersHorizontalIcon,
 } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
 export default function navShop() {
   return (
     <div>
-      <Navbar />
-      {/*shopBanner1*/}
-      <div className="relative">
-        <Image
-          src={"/Rectangle 1.png"}
-          alt="shopbg"
-          height={316}
-          width={14440}
-        />
-        <div className="absolute lg:top-[150px] top-9 left-44 lg:left-[650px]">
-          <h1 className="font-bold pl-7 text-xl lg:pl-0 lg:text-5xl">Shop</h1>
-          <div className="flex lg:mt-5 lg:text-xl">
-            <Link href={"/"} className="font-bold">
-              Home
-            </Link>
-            <ChevronRight />
-            <p className="font-thin">Shop</p>
-          </div>
-        </div>
-      </div>
-      {/*shopBanner2*/}
+    <HeadBanner title="shop"/>
       <div className="bg-[#f9f1e7] flex flex-col lg:flex-row justify-between ">
         <div className="flex m-7">
           <div className="flex gap-5 ml-0 lg:ml-14 ">
@@ -89,7 +65,6 @@ export default function navShop() {
         </div>
       </div>
       <Topfooter />
-      <Footer />
     </div>
   );
 }

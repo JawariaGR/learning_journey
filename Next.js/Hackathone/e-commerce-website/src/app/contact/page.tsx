@@ -1,46 +1,12 @@
-import Navbar from "@/components/Navbar";
-import Image from "next/image";
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import HeadBanner from "@/components/Head";
 import LocationOn from "@mui/icons-material/LocationOn";
 import Call from "@mui/icons-material/Call";
 import Schedule from "@mui/icons-material/Schedule";
 import Topfooter from "@/components/TopFooter";
-import Footer from "@/components/Footer";
 export default function Contact() {
   return (
     <div>
-      <Navbar />
-      <section>
-        <div className="relative">
-          <Image
-            src={"/Rectangle 1.png"}
-            alt="shopbg"
-            height={316}
-            width={14440}
-            className="bg-cover"
-          />
-          <div className="absolute lg:top-[120px] top-10 left-44 lg:left-[650px]">
-            <Image
-              src={"/Meubel House_Logos-05.png"}
-              alt="logo"
-              width={70}
-              height={70}
-              className="pb-4 ml-9 hidden"
-            />
-            <h1 className="font-bold pl-7 text-xl lg:pl-0 lg:text-5xl">
-              Contact
-            </h1>
-            <div className="flex lg:mt-5 lg:text-xl">
-              <Link href={"/"} className="font-bold">
-                Home
-              </Link>
-              <ChevronRight />
-              <p className="font-thin">Contact</p>
-            </div>
-          </div>
-        </div>
-      </section>
+    <HeadBanner title="Contact"/>
       <main>
         <div className="flex flex-col lg:mt-20 mt-10 justify-center items-center">
           <h1 className="font-extrabold text-3xl">Get In Touch With Us</h1>
@@ -125,7 +91,6 @@ export default function Contact() {
         </div>
       </main>
       <Topfooter/>
-      <Footer/>
     </div>
   );
 }
