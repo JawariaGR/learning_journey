@@ -10,13 +10,18 @@ export const metadata: Metadata = {
   description: "Ecommerce website",
 };
 
-export default function RootLayout({ children }: { children: ReactNode }):JSX.Element{
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}): JSX.Element {
   return (
     <html lang="en">
       <body>
-        <Navbar/>
+        {" "}
+        <Navbar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

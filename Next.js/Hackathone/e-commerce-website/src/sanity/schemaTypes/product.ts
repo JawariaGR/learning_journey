@@ -9,6 +9,25 @@ export const productInfo = {
       title: "Product Name",
     },
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title', 
+        maxLength: 96,
+      },
+    },
+    {
+      name: "Stock",
+      type: "number",
+      title: "Stock",
+    },
+    {
+      name: "Sold",
+      type: "number",
+      title: "Sold",
+    },
+    {
       name: "description",
       type: "text",
       title: "Product description",

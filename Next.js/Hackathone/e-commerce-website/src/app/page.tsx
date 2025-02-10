@@ -2,7 +2,10 @@ import Image from "next/image";
 import Product from "@/components/product";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import Link from "next/link";
-export default function Home() {
+import { fourProduct } from "@/sanity/lib/productquery";
+import { fetchProductfromsanity } from "@/sanity/lib/fetchProduct";
+export default async function Home() {
+  const products = await fetchProductfromsanity({ quary: fourProduct });
   return (
     <div>
       <main className="h-full">
@@ -91,9 +94,9 @@ export default function Home() {
         <div className="flex justify-center m-8">
           <h1 className="text-4xl font-extrabold">Our Product</h1>
         </div>{" "}
-        <Product/>
+        <Product products={products} />
         <div className="flex justify-center my-8">
-          <Link href={"/navshop"}>
+          <Link href={"/shop"}>
             {" "}
             <button className="bg-white border-[#B88E2F]  border-solid border-2 w-48 h-10 text-[#B88E2F] shadow-xl hover:translate-x-4 hover:translate-y-4 ">
               Show More
@@ -112,9 +115,11 @@ export default function Home() {
               Our designer already made Link lot of Beautiful{" "}
               <span className="block">Prototipe of rooms that inspire you</span>
             </p>
+            <Link href={"/shop"}>
             <button className=" mt-8 h-[50px] w-52 text-[#fcf8f3] bg-[#b88e2f] font-bold text-lg rounded-md hover:translate-x-3 hover:translate-y-4">
               Explor more
             </button>
+            </Link>
           </div>
           <div className="mt-20 mb-20 flex flex-col lg:flex-row relative">
             <Image

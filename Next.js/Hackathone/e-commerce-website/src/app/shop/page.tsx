@@ -6,7 +6,11 @@ import {
   AlignVerticalJustifyCenterIcon,
   SlidersHorizontalIcon,
 } from "lucide-react";
-export default function navShop() {
+import { fetchProductfromsanity } from "@/sanity/lib/fetchProduct";
+import { allProductsQuery } from "@/sanity/lib/productquery";
+export default  async function Shop() {
+    const products = await fetchProductfromsanity({ quary: allProductsQuery });
+  
   return (
     <div>
     <HeadBanner title="shop"/>
@@ -45,10 +49,7 @@ export default function navShop() {
       </div>
       {/*Product*/}
       <div className="m-28">
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+        <Product products={products} />
         <div className="lg:flex hidden justify-center items-center gap-7 m-20 cursor-pointer">
           <p className="h-12 w-12  pt-3 pl-5 bg-[#b88e2f] text-[#FFFFFF]  rounded-lg hover:translate-x-3 hover:translate-y-3">
             1

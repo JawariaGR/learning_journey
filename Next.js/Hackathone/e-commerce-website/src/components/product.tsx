@@ -1,22 +1,20 @@
 import { ArrowLeftRight, Heart, Share2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { fetchProductfromsanity } from "@/sanity/lib/fetchProduct";
-import { latestProduct } from "@/sanity/lib/latestproduct";
-interface productCard {
-  _id: string;
-  productName: string;
-  description: string;
-  realPrice: string;
-  discount: string;
-  discountPrice: string;
-  imageUrl: string;
-  newarrival:string
+interface productCardprop {
+  products: {
+    _id: string;
+    productName: string;
+    description: string;
+    realPrice: string;
+    discount: string;
+    discountPrice: string;
+    imageUrl: string;
+    newarrival: string;
+    Stock: number;
+  }[];
 }
-async function ProductCard() {
-
-const products:productCard[] = await fetchProductfromsanity({quary:latestProduct})
-
+async function ProductCard({ products }: productCardprop) {
   return (
     <div className="flex justify-center items-center mb-8 mt-4 ">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -25,7 +23,7 @@ const products:productCard[] = await fetchProductfromsanity({quary:latestProduct
             key={product._id}
             className="relative group shadow-xl rounded-lg bg-[#f4f5f7]"
           >
-            <Link href={`/single-product/`}>
+            <Link href={`/shop/${product.productName.replace(/\s+/g, "-")}`}>
               {product.imageUrl ? (
                 <Image
                   src={product.imageUrl}
@@ -59,24 +57,29 @@ const products:productCard[] = await fetchProductfromsanity({quary:latestProduct
                   </div>
                 </div>
               </div>
-              {product.newarrival &&
-              <div className="absolute bg-[#2ec1ac] text-[#fceded] font-bold h-14 w-14 top-3  flex justify-center ml-48 rounded-3xl items-center opacity-100 group-hover:opacity-0">
-              <p>{product.newarrival}</p>
-            </div>}
-              {product.discount &&
-              <div className="absolute bg-[#e97171] text-[#fceded] font-bold h-14 w-14 top-3 flex justify-center ml-48 rounded-3xl items-center opacity-100 group-hover:opacity-0 ">
-                <p>-{product.discount}%</p>
-              </div>}
+              {product.newarrival && (
+                <div className="absolute bg-[#2ec1ac] text-[#fceded] font-bold h-14 w-14 top-3  flex justify-center ml-48 rounded-3xl items-center opacity-100 group-hover:opacity-0">
+                  <p>{product.newarrival}</p>
+                </div>
+              )}
+              {product.discount && (
+                <div className="absolute bg-[#e97171] text-[#fceded] font-bold h-14 w-14 top-3 flex justify-center ml-48 rounded-3xl items-center opacity-100 group-hover:opacity-0 ">
+                  <p>-{product.discount}%</p>
+                </div>
+              )}
             </Link>
             <div className="m-7">
               <h1 className="font-bold">{product.productName}</h1>
               <p className="text-gray-500 text-sm">{product.description}</p>
               <p className="font-bold pt-2">
-                {product.discountPrice ?(product.discountPrice):product.realPrice}{" "}
+                {product.discountPrice
+                  ? product.discountPrice
+                  : product.realPrice}{" "}
                 <span className="pl-2 font-light">
-                {product.discountPrice && <del>{product.realPrice}</del>}
+                  {product.discountPrice && <del>{product.realPrice}</del>}
                 </span>
               </p>
+              <p className="pt-4">stock in {product.Stock}</p>
             </div>
           </div>
         ))}

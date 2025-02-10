@@ -32,7 +32,7 @@ export default function navbar() {
       </div>
       <div className="justify-center gap-12 font-bold hidden md:flex">
         <Link href={"/"}>Home</Link>
-        <Link href={"/navshop"}>Shop</Link>
+        <Link href={"/shop"}>Shop</Link>
         <Link href={"/blog"}>Blog</Link>
         <Link href={"/contact"}>Contact</Link>
       </div>
@@ -148,7 +148,7 @@ export default function navbar() {
                 <Link href={"/"} className="font-semibold">
                   Home
                 </Link>
-                <Link className="font-semibold" href={"/navshop"}>
+                <Link className="font-semibold" href={"/shop"}>
                   Shop
                 </Link>
                 <Link href={"/blog"} className="font-semibold">
