@@ -1,0 +1,1 @@
+Build a simple api using FastAPI, python and uv 
