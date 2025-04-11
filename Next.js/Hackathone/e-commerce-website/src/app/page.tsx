@@ -2,10 +2,10 @@ import Image from "next/image";
 import Product from "@/components/product";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import Link from "next/link";
-import { fourProduct } from "@/sanity/lib/productquery";
+import { allProductsQuery } from "@/sanity/lib/productquery";
 import { fetchProductfromsanity } from "@/sanity/lib/fetchProduct";
 export default async function Home() {
-  const products = await fetchProductfromsanity({ quary: fourProduct });
+  const products = await fetchProductfromsanity({ quary: allProductsQuery });
   return (
     <div>
       <main className="h-full">
@@ -94,7 +94,7 @@ export default async function Home() {
         <div className="flex justify-center m-8">
           <h1 className="text-4xl font-extrabold">Our Product</h1>
         </div>{" "}
-        <Product products={products} />
+        <Product products={products.slice(0,4)} />
         <div className="flex justify-center my-8">
           <Link href={"/shop"}>
             {" "}

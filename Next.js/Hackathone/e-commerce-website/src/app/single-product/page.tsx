@@ -11,10 +11,10 @@ import {
 import Link from "next/link";
 import Quanity from "@/components/ui/Quanity";
 import Product from "@/components/product";
-import { fourProduct } from "@/sanity/lib/productquery";
+import { allProductsQuery } from "@/sanity/lib/productquery";
 import { fetchProductfromsanity } from "@/sanity/lib/fetchProduct";
 export default async function singleProduct() {
-  const products = await fetchProductfromsanity({ quary: fourProduct });
+  const products = await fetchProductfromsanity({ quary: allProductsQuery });
 
   return (
     <div>
@@ -235,7 +235,7 @@ export default async function singleProduct() {
       <section>
         <div className="border-t-2 flex flex-col justify-center items-center">
           <h1 className="text-4xl font-bold pb-12 pt-9 ">Related Product</h1>
-          <Product products={products} />
+          <Product products={products.slice(0,4)} />
           <div className="mt-12 mb-20">
             <Link href={"/navshop"}>
               <button className="bg-white border-[#B88E2F] border-solid border-2 w-48 h-10 text-[#B88E2F] shadow-xl hover:translate-x-4 hover:translate-y-4 ">

@@ -1,147 +1,22 @@
 import HeadBanner from "@/components/Head";
 import Image from "next/image";
 import { Search } from "lucide-react";
-import CalendarToday from "@mui/icons-material/CalendarToday";
-import Sell from "@mui/icons-material/Sell";
-import Person from "@mui/icons-material/Person";
+import Blogcard from "@/components/blogcard";
+import { fetchProductfromsanity } from "@/sanity/lib/fetchProduct";
+import { blogQuery } from "@/sanity/lib/blogquary";
 import Topfooter from "@/components/TopFooter";
 
-export default function Blog() {
+export default async function Blog() {
+      const blogs = await fetchProductfromsanity({ quary: blogQuery});
   return (
     <div>
     <HeadBanner title="Blog"/>
-
       {/*blog*/}
       <div className="flex flex-col lg:flex-row justify-between items-start mt-10 lg:mt-20">
         <div className="flex flex-col float-left lg:ml-32 gap-5">
-          <div className="flex flex-col lg:ml-8 ml-1">
-            <Image
-              src={"/blog pic 1.png"}
-              alt="first blog img"
-              height={500}
-              width={817}
-              className="w-full max-w-[500px] lg:max-w-[817px] h-auto "
-            />
-            <div className="text-[#9F9F9F] flex gap-5 mt-4">
-              <p>
-                {" "}
-                <Person />
-                <span>Admin</span>{" "}
-              </p>
-              <p>
-                {" "}
-                <CalendarToday />
-                <span>14 Oct 2022</span>
-              </p>{" "}
-              <p>
-                <Sell />
-                <span>Wood</span>
-              </p>{" "}
-            </div>
-            <p className="font-bold text-3xl mt-4">
-              Going all-in with millennial design
-            </p>
-            <p className="lg:text-xl text-sm w-[500px] lg:w-[800px] pt-4 pb-4 text-[#9F9F9F] h-[200px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus
-              mauris vitae ultricies leo integer malesuada nunc. In nulla
-              posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus
-              at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis
-              in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar
-              mattis nunc sed blandit libero. Pellentesque elit ullamcorper
-              dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean
-              euismod elementum.
-            </p>
-            <button className="font-semibold text-lg border-b-2 border-black mb-3 w-24 items-start ml-0 ">
-              Read more{" "}
-            </button>
-          </div>
-          <div className="flex flex-col lg:ml-8 ml-1">
-            <Image
-              src={"/blog 2.png"}
-              alt="second blog img"
-              height={500}
-              width={817}
-              className="w-full max-w-[500px]  lg:max-w-[817px] h-auto "
-            />
-            <div className="text-[#9F9F9F] flex gap-5 mt-4">
-              <p>
-                {" "}
-                <Person />
-                <span>Admin</span>{" "}
-              </p>
-              <p>
-                {" "}
-                <CalendarToday />
-                <span>14 Oct 2022</span>
-              </p>{" "}
-              <p>
-                <Sell />
-                <span>Handmade</span>
-              </p>{" "}
-            </div>
-            <p className="font-bold text-3xl mt-4">
-              Exploring new ways of decorating{" "}
-            </p>
-            <p className="lgtext-xl text-sm lg:w-[800px] w-[500px] pt-4 pb-4 text-[#9F9F9F] h-[200px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus
-              mauris vitae ultricies leo integer malesuada nunc. In nulla
-              posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus
-              at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis
-              in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar
-              mattis nunc sed blandit libero. Pellentesque elit ullamcorper
-              dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean
-              euismod elementum.
-            </p>
-            <button className="font-semibold text-lg border-b-2 border-black mb-3 w-24 items-start ml-0 ">
-              Read more{" "}
-            </button>
-          </div>
-          <div className="flex flex-col lg:ml-8 ml-1">
-            <Image
-              src={"/blog 3.png"}
-              alt="Third blog img"
-              height={500}
-              width={817}
-              className="w-full max-w-[500px] lg:max-w-[817px] h-auto "
-
-            />
-            <div className="text-[#9F9F9F] flex gap-5 mt-4">
-              <p>
-                {" "}
-                <Person />
-                <span>Admin</span>{" "}
-              </p>
-              <p>
-                {" "}
-                <CalendarToday />
-                <span>14 Oct 2022</span>
-              </p>{" "}
-              <p>
-                <Sell />
-                <span>Wood</span>
-              </p>{" "}
-            </div>
-            <p className="font-bold text-3xl mt-4">
-              Handmade Piece that took time to make{" "}
-            </p>
-            <p className="text-sm lg:text-xl lg:w-[800px] w-[500px] pt-4 pb-4 text-[#9F9F9F] h-[200px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus
-              mauris vitae ultricies leo integer malesuada nunc. In nulla
-              posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus
-              at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis
-              in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar
-              mattis nunc sed blandit libero. Pellentesque elit ullamcorper
-              dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean
-              euismod elementum.
-            </p>
-            <button className="font-semibold text-lg border-b-2 border-black mb-3 w-24 items-start ml-0 ">
-              Read more{" "}
-            </button>
-          </div>
+        <Blogcard blogs={blogs}/>
         </div>
+        {/* blog left side  */}
         <div>
           <div className="flex flex-col float-right mt-5 lg:mt-0 ml-9 lg:ml-0 lg:mr-48">
             <div className="hidden lg:block ">
